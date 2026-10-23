@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="th"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>ค่าธรรมเนียมและกำไรสุทธิ</title><link rel="stylesheet" href="../css/style.css"></head>
+<body><h1>ระบบคำนวณค่าธรรมเนียมและกำไรสุทธิ</h1><p><a href="../index.html">กลับหน้าหลัก</a></p>
+<label for="revenue">ยอดขายรวม (บาท)</label><input id="revenue" type="number" min="0" step="0.01" value="10000">
+<label for="cost">ต้นทุนสินค้ารวม (บาท)</label><input id="cost" type="number" min="0" step="0.01" value="5000">
+<label for="commission">ค่าคอมมิชชันแพลตฟอร์ม (%)</label><input id="commission" type="number" min="0" max="100" step="0.01" value="5">
+<label for="payment">ค่ารับชำระเงิน (%)</label><input id="payment" type="number" min="0" max="100" step="0.01" value="2">
+<label for="ads">ค่าโฆษณา (บาท)</label><input id="ads" type="number" min="0" step="0.01" value="500">
+<label for="other">ค่าใช้จ่ายอื่น (บาท)</label><input id="other" type="number" min="0" step="0.01" value="0">
+<button id="calculate" type="button">คำนวณกำไรสุทธิ</button><p id="result" aria-live="polite"></p>
+<script src="../js/net-profit.js"></script></body></html>

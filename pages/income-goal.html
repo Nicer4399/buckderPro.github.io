@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html lang="th"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>ตั้งเป้าหมายรายได้</title><link rel="stylesheet" href="../css/style.css"></head>
+<body><h1>ระบบตั้งเป้าหมายรายได้</h1><p><a href="../index.html">กลับหน้าหลัก</a></p>
+<label for="goal">กำไรเป้าหมายต่อเดือน (บาท)</label><input id="goal" type="number" min="0" step="0.01" value="10000">
+<label for="profit">กำไรต่อชิ้น (บาท)</label><input id="profit" type="number" min="0" step="0.01" value="20">
+<label for="days">จำนวนวันขายต่อเดือน</label><input id="days" type="number" min="1" step="1" value="30">
+<label for="dailyQty">ถ้าขายได้วันละกี่ชิ้น</label><input id="dailyQty" type="number" min="0" step="1" value="20">
+<button id="calculate" type="button">คำนวณเป้าหมาย</button><p id="result" aria-live="polite"></p>
+<script src="../js/income-goal.js"></script></body></html>

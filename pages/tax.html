@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="th"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>ระบบคำนวณภาษี</title><link rel="stylesheet" href="../css/style.css"></head>
+<body><h1>ระบบคำนวณภาษี</h1><p><a href="../index.html">กลับหน้าหลัก</a></p>
+<section><h2>คำนวณ VAT</h2>
+<label for="amount">จำนวนเงิน (บาท)</label><input id="amount" type="number" min="0" step="0.01" value="1000">
+<label for="vatRate">อัตรา VAT (%)</label><input id="vatRate" type="number" min="0" step="0.01" value="7">
+<label for="vatMode">ประเภทจำนวนเงิน</label><select id="vatMode"><option value="before">ราคาก่อน VAT</option><option value="included">ราคารวม VAT แล้ว</option></select>
+<button id="calcVat" type="button">คำนวณ VAT</button><p id="vatResult" aria-live="polite"></p></section>
+<section><h2>ตรวจสอบเกณฑ์รายรับ VAT</h2><p>กรอกยอดรายรับจากกิจการต่อปีเพื่อเปรียบเทียบกับเกณฑ์ทั่วไป 1,800,000 บาทต่อปี ทั้งนี้มีข้อยกเว้นและเงื่อนไขตามกฎหมาย ควรตรวจสอบกับกรมสรรพากร</p>
+<label for="annualRevenue">รายรับต่อปี (บาท)</label><input id="annualRevenue" type="number" min="0" step="0.01">
+<button id="checkThreshold" type="button">ตรวจสอบเกณฑ์</button><p id="thresholdResult" aria-live="polite"></p>
+<p>ข้อมูลทางการ: <a href="https://www.rd.go.th/" target="_blank" rel="noopener">กรมสรรพากร</a></p></section>
+<script src="../js/tax.js"></script></body></html>

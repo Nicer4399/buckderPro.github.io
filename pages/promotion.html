@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html lang="th"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>ส่วนลดและโปรโมชั่น</title><link rel="stylesheet" href="../css/style.css"></head>
+<body><h1>ระบบคำนวณส่วนลดและโปรโมชั่น</h1><p><a href="../index.html">กลับหน้าหลัก</a></p>
+<label for="price">ราคาปกติต่อชิ้น (บาท)</label><input id="price" type="number" min="0" step="0.01" value="100">
+<label for="discount">ส่วนลด (%)</label><input id="discount" type="number" min="0" max="100" step="0.01" value="10">
+<label for="promoQty">จำนวนชิ้นที่ลูกค้าจ่ายเงิน</label><input id="promoQty" type="number" min="1" step="1" value="2">
+<label for="freeQty">จำนวนชิ้นที่แถม</label><input id="freeQty" type="number" min="0" step="1" value="1">
+<label for="cost">ต้นทุนต่อชิ้น (บาท)</label><input id="cost" type="number" min="0" step="0.01" value="50">
+<button id="calculate" type="button">คำนวณโปรโมชั่น</button><p id="result" aria-live="polite"></p>
+<script src="../js/promotion.js"></script></body></html>

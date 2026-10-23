@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ระบบคำนวณธุรกิจ</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>Buckder Pro</h1>
+    <p>คำนวณต้นทุน ราคาขาย ยอดขาย และจุดคุ้มทุน</p>
+  </header>
+
+  <nav aria-label="ระบบเสริม">
+    <h2>ระบบเสริม</h2>
+    <ul>
+      <li><a href="pages/tax.html">ระบบคำนวณภาษี</a></li>
+      <li><a href="pages/promotion.html">ระบบคำนวณส่วนลดและโปรโมชั่น</a></li>
+      <li><a href="pages/net-profit.html">ระบบค่าธรรมเนียมและกำไรสุทธิ</a></li>
+      <li><a href="pages/income-goal.html">ระบบตั้งเป้าหมายรายได้</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section>
+      <h2>1. ระบบคำนวณราคาขาย</h2>
+      <label for="cost">ต้นทุนต่อชิ้น (บาท)</label>
+      <input id="cost" type="number" min="0" step="0.01" value="30">
+
+      <label for="extraCost">ค่าใช้จ่ายเพิ่มเติมต่อชิ้น (บาท)</label>
+      <input id="extraCost" type="number" min="0" step="0.01" value="0">
+
+      <label for="profitMode">วิธีคำนวณ</label>
+      <select id="profitMode">
+        <option value="markup">บวกกำไรจากต้นทุน (Markup %)</option>
+        <option value="margin">กำหนดอัตรากำไรจากราคาขาย (Margin %)</option>
+      </select>
+
+      <label for="profitPercent">เปอร์เซ็นต์กำไร</label>
+      <input id="profitPercent" type="number" min="0" step="0.01" value="30">
+      <button type="button" id="calculatePrice">คำนวณราคาขาย</button>
+      <p id="priceResult" aria-live="polite">กรอกข้อมูลแล้วกดคำนวณ</p>
+    </section>
+
+    <hr>
+
+    <section>
+      <h2>2. ระบบคำนวณยอดขายและเงินก้อน</h2>
+      <label for="quantitySold">จำนวนที่ขายได้ (ชิ้น)</label>
+      <input id="quantitySold" type="number" min="0" step="1" value="100">
+
+      <label for="salePrice">ราคาขายต่อชิ้น (บาท)</label>
+      <input id="salePrice" type="number" min="0" step="0.01" value="50">
+
+      <label for="unitCost">ต้นทุนต่อชิ้น (บาท)</label>
+      <input id="unitCost" type="number" min="0" step="0.01" value="30">
+
+      <label for="batchExtra">ค่าใช้จ่ายรวมของล็อต (บาท)</label>
+      <input id="batchExtra" type="number" min="0" step="0.01" value="0">
+
+      <button type="button" id="calculateSales">คำนวณยอดขาย</button>
+      <p id="salesResult" aria-live="polite">กรอกข้อมูลแล้วกดคำนวณ</p>
+    </section>
+
+    <hr>
+
+    <section>
+      <h2>3. ระบบคำนวณต้นทุนทั้งหมด</h2>
+      <label for="productCost">ราคาสินค้าต่อชิ้น (บาท)</label>
+      <input id="productCost" type="number" min="0" step="0.01" value="25">
+
+      <label for="shipping">ค่าขนส่งรวม (บาท)</label>
+      <input id="shipping" type="number" min="0" step="0.01" value="100">
+
+      <label for="packaging">ค่าบรรจุภัณฑ์ต่อชิ้น (บาท)</label>
+      <input id="packaging" type="number" min="0" step="0.01" value="2">
+
+      <label for="platformFee">ค่าธรรมเนียมอื่นต่อชิ้น (บาท)</label>
+      <input id="platformFee" type="number" min="0" step="0.01" value="0">
+
+      <label for="labor">ค่าแรงรวมของล็อต (บาท)</label>
+      <input id="labor" type="number" min="0" step="0.01" value="0">
+
+      <label for="batchQuantity">จำนวนสินค้าในล็อต (ชิ้น)</label>
+      <input id="batchQuantity" type="number" min="1" step="1" value="100">
+
+      <label for="otherCost">ค่าใช้จ่ายอื่นรวม (บาท)</label>
+      <input id="otherCost" type="number" min="0" step="0.01" value="0">
+
+      <button type="button" id="calculateCost">คำนวณต้นทุน</button>
+      <p id="costResult" aria-live="polite">กรอกข้อมูลแล้วกดคำนวณ</p>
+    </section>
+
+    <hr>
+
+    <section>
+      <h2>4. ระบบคำนวณจุดคุ้มทุน</h2>
+      <label for="fixedCost">ค่าใช้จ่ายคงที่ (บาท)</label>
+      <input id="fixedCost" type="number" min="0" step="0.01" value="5000">
+
+      <label for="breakEvenPrice">ราคาขายต่อชิ้น (บาท)</label>
+      <input id="breakEvenPrice" type="number" min="0" step="0.01" value="100">
+
+      <label for="variableCost">ต้นทุนผันแปรต่อชิ้น (บาท)</label>
+      <input id="variableCost" type="number" min="0" step="0.01" value="60">
+
+      <label for="targetProfit">กำไรเป้าหมาย (บาท)</label>
+      <input id="targetProfit" type="number" min="0" step="0.01" value="10000">
+
+      <button type="button" id="calculateBreakEven">คำนวณจุดคุ้มทุน</button>
+      <p id="breakEvenResult" aria-live="polite">กรอกข้อมูลแล้วกดคำนวณ</p>
+    </section>
+  </main>
+  
+  <!-- Buckder Personal Assistant -->
+  <div id="buckderAssistant" class="buckder-assistant">
+    <div
+      id="buckderSpeech"
+      class="buckder-speech"
+      role="status"
+      aria-live="polite"
+      hidden
+    >
+      <p id="buckderMessage"></p>
+      <span class="buckder-hint">คลิกที่ Buckder เพื่ออ่านต่อ</span>
+    </div>
+
+    <button
+      type="button"
+      id="buckderToggle"
+      class="buckder-toggle"
+      aria-label="เปิดผู้ช่วยส่วนตัว Buckder"
+      aria-controls="buckderSpeech"
+      aria-expanded="false"
+    ></button>
+  </div>
+  <!-- End Buckder Personal Assistant -->
+
+  <footer>
+    <p>เวอร์ชันเริ่มต้น: ข้อมูลคำนวณในหน้านี้ยังไม่ถูกบันทึกลงฐานข้อมูล</p>
+    <p>ดังนั้น ข้อมูลไม่รั่วไหลเเน่นอนคับ</p>
+  </footer>
+  <script src="js/calculator.js"></script>
+  <script src="js/calculator.js"></script>
+  <script src="js/buckder.js"></script>
+</body>
+</html>
